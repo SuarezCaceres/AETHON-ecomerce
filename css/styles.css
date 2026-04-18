@@ -1,0 +1,349 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    background: #000000;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Main Styles */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* Libros Destacados Section */
+.libros-destacados {
+    padding: 40px 20px;
+    background: #070707;
+}
+
+.seccion-contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.titulo-destacado {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+.libros-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: stretch;
+}
+
+@media (min-width: 768px) {
+    .libros-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 767.98px) {
+    .libros-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.libro-card {
+    background: #1a1a1a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.libro-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(220, 53, 69, 0.3);
+}
+
+.libro-card-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.libro-card-body {
+    padding: 16px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.libro-card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    color: #ffffff;
+}
+
+.libro-card-author {
+    font-size: 0.875rem;
+    color: #b0b0b0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+/* Featured Book Section */
+.featured-book-section {
+    padding: 40px 20px;
+    background: #070707;
+}
+
+.featured-book-contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #1a1a1a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.featured-book {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.featured-book-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.featured-book-image {
+    flex: 0 0 auto;
+    min-width: 200px;
+}
+
+.featured-book-image img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.featured-category {
+    display: inline-block;
+    color: #00cc00;
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin-bottom: 10px;
+}
+
+.featured-book-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 10px 0;
+}
+
+.featured-book-author {
+    font-size: 1rem;
+    color: #b0b0b0;
+    margin: 0 0 15px 0;
+}
+
+.featured-book-description {
+    font-size: 0.95rem;
+    color: #d0d0d0;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+}
+
+.featured-book-link {
+    display: inline-block;
+    color: #dc3545;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.featured-book-link:hover {
+    color: #ff4444;
+}
+
+@media (max-width: 991.98px) {
+    .featured-book {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .featured-book-image {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+/* Libro Grande Section */
+.libro-destacada-grande {
+    padding: 40px 20px;
+    background: #070707;
+}
+
+.libro-grande-contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    background: #1a1a1a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.libro-grande {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.libro-grande-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.libro-grande-image {
+    flex: 0 0 auto;
+}
+
+.libro-grande-image img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.libro-grande-category {
+    display: inline-block;
+    color: #dc3545;
+    font-weight: 700;
+    font-size: 0.875rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.libro-grande-titulo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 12px 0;
+    line-height: 1.2;
+}
+
+.libro-grande-autor {
+    font-size: 1.1rem;
+    color: #b0b0b0;
+    margin: 0 0 20px 0;
+}
+
+.libro-grande-descripcion {
+    font-size: 1rem;
+    color: #d0d0d0;
+    line-height: 1.7;
+    margin: 0 0 25px 0;
+}
+
+.libro-grande-link {
+    display: inline-block;
+    color: #dc3545;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.libro-grande-link:hover {
+    color: #ff4444;
+}
+
+@media (max-width: 991.98px) {
+    .libro-grande {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .libro-grande-content {
+        text-align: center;
+    }
+
+    .libro-grande-image {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .libro-grande-titulo {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    /* Cambio móvil: achicar y reorganizar divs para pantallas pequeñas */
+    .libros-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .libro-card-img {
+        height: 220px;
+    }
+
+    .libro-card-body {
+        padding: 14px;
+    }
+
+    .libro-card-title {
+        font-size: 0.95rem;
+    }
+
+    .titulo-destacado {
+        font-size: 1.75rem;
+    }
+
+    .featured-book-contenedor {
+        padding: 20px;
+    }
+
+    .featured-book {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .featured-book-image img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .featured-book-title {
+        font-size: 1.3rem;
+    }
+
+    .featured-book-description {
+        font-size: 0.9rem;
+    }
+
+    .libro-grande-contenedor {
+        padding: 20px;
+    }
+
+    .libro-grande {
+        gap: 20px;
+    }
+
+    .libro-grande-image img {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .libro-grande-titulo {
+        font-size: 1.5rem;
+    }
+}

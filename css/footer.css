@@ -1,0 +1,57 @@
+/* Estilos para el Pie de Página */
+.main-footer {
+    background-color: #0a0a0a;
+    color: #ffffff;
+    padding: 40px 0 20px 0; /* Quitamos padding lateral para que llegue al borde */
+    font-family: Arial, sans-serif;
+    border-top: 1px solid #333;
+    width: 100%;
+    position: relative;
+    left: 0;
+    bottom: 0;
+}
+
+.footer-top {
+    text-align: center;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.footer-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+}
+
+.footer-nav a:last-child {
+    color: #ff4d4d; /* Rojo para Preguntas Frecuentes */
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* El contenido interno sí se queda centrado */
+    margin: 0 auto;
+    padding: 20px 20px 0 20px;
+    border-top: 1px solid #222;
+    font-size: 14px;
+    color: #888;
+}
+
+.footer-legal a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.separator {
+    margin: 0 8px;
+    color: #555;
+}
+
+/* Ajuste para que no se vea el borde blanco que a veces deja el body */
+body {
+    margin: 0;
+    padding: 0;
+}

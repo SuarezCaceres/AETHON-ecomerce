@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AETHON</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Estilos principales -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/blogInformacion.css">
+
+    <!-- se agrega la navbar de bootstrap para reutilización en otras páginas -->
+    <link href="css/navbar.css" rel="stylesheet">
+
+    <!-- se agrega el carrusel de bootstrap para reutilización en otras páginas -->
+    <link href="css/carousel.css" rel="stylesheet">
+
+    <!-- estilos del footer -->
+    <link href="css/footer.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Barra de navegación incluida desde navbar.html -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Carrusel incluido desde carousel.html -->
+    <div id="carousel-placeholder"></div>
+
+    <!-- contenido principal -->
+    <main class="main-content">
+
+        <!-- Libro destacado principal -->
+        <section class="libro-destacada-grande">
+            <div class="libro-grande-contenedor">
+                <div class="libro-grande">
+                    <div class="libro-grande-content">
+                        <span class="libro-grande-category">Novela Destacada</span>
+                        <h2 class="libro-grande-titulo">El Señor de los Anillos</h2>
+                        <p class="libro-grande-autor">J.R.R. Tolkien</p>
+                        <p class="libro-grande-descripcion">
+                            Una épica aventura en la Tierra Media llena de magia, héroes y batallas legendarias.
+                        </p>
+                        <a href="#" class="libro-grande-link">Leer más →</a>
+                    </div>
+                    <div class="libro-grande-image">
+                        <img src="img/libro1.jpg" alt="El Señor de los Anillos">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Libros Destacados -->
+        <section class="libros-destacados">
+            <div class="seccion-contenedor">
+                <h1 class="titulo-destacado">Libros Destacados</h1>
+
+                <div class="libros-grid">
+                    <div class="libro-card">
+                        <img src="img/libro1.jpg" class="libro-card-img">
+                        <div class="libro-card-body">
+                            <h5>#1 - El Señor de los Anillos</h5>
+                            <p>J.R.R. Tolkien</p>
+                        </div>
+                    </div>
+
+                    <div class="libro-card">
+                        <img src="img/libro2.png" class="libro-card-img">
+                        <div class="libro-card-body">
+                            <h5>#2 - Breve Historia del Tiempo</h5>
+                            <p>Stephen Hawking</p>
+                        </div>
+                    </div>
+
+                    <div class="libro-card">
+                        <img src="img/libro1.jpg" class="libro-card-img">
+                        <div class="libro-card-body">
+                            <h5>#3 - 1984</h5>
+                            <p>George Orwell</p>
+                        </div>
+                    </div>
+
+                    <div class="libro-card">
+                        <img src="img/libro2.png" class="libro-card-img">
+                        <div class="libro-card-body">
+                            <h5>#4 - Cien Años de Soledad</h5>
+                            <p>Gabriel García Márquez</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Segundo libro destacado -->
+        <section class="featured-book-section">
+            <div class="featured-book-contenedor">
+                <div class="featured-book">
+                    <div class="featured-book-content">
+                        <span class="featured-category">Ciencia</span>
+                        <h3>Breve Historia del Tiempo</h3>
+                        <p>Stephen Hawking</p>
+                        <p>Una introducción accesible a los misterios del universo.</p>
+                        <a href="#">Leer más</a>
+                    </div>
+
+                    <div class="featured-book-image">
+                        <img src="img/libro2.png">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scripts -->
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/script.js"></script>
+
+    </main>
+
+    <!-- Footer incluido desde footer.html -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Script para incluir componentes HTML separados -->
+    <script>
+        // Función para cargar HTML parcial en un elemento
+        function loadComponent(url, elementId) {
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                })
+                .catch(error => console.error('Error cargando ' + url + ':', error));
+        }
+
+        // Cargar componentes al iniciar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            // se enlazan los HTML con sus contenedores
+            loadComponent('navbar.html', 'navbar-placeholder');
+            loadComponent('carousel.html', 'carousel-placeholder');
+            loadComponent('footer.html', 'footer-placeholder'); 
+        });
+    </script>
+
+</body>
+</html>
