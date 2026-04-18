@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AETHON</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Estilos principales -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/blogInformacion.css">
+    <link rel="stylesheet" href="css/seccion-extra.css">
+
+    <!-- se agrega la navbar de bootstrap para reutilización en otras páginas -->
+    <link href="css/navbar.css" rel="stylesheet">
+
+    <!-- se agrega el carrusel de bootstrap para reutilización en otras páginas -->
+    <link href="css/carousel.css" rel="stylesheet">
+
+    <!-- estilos del footer -->
+    <link href="css/footer.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Barra de navegación incluida desde navbar.html -->
+    <div id="navbar-placeholder"></div>
+
+
+    <!-- contenido principal -->
+    <main class="main-content">
+
+    <!-- ══ HERO ══ -->
+    <section class="hero-section">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+ 
+            <div class="hero-cover">
+                <img src="img/libro1.jpg" alt="Lord of the Mysteries">
+            </div>
+ 
+            <div class="hero-info">
+                <h1>Lord of the Mysteries</h1>
+                <p class="hero-author">Por <span>Cuttlefish That Loves Diving</span></p>
+ 
+                <a href="#" class="btn-comprar">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 001.98 1.61h9.72a2 2 0 001.98-1.61L23 6H6"/>
+                    </svg>
+                    Comprar
+                </a>
+ 
+                <div class="hero-tags">
+                    <span class="htag active">Acción</span>
+                    <span class="htag">Aventura</span>
+                    <span class="htag">Drama</span>
+                    <span class="htag">Fantasy</span>
+                    <span class="htag">Misterio</span>
+                    <span class="htag">Más...</span>
+                </div>
+ 
+                <div class="hero-actions">
+                    <button class="hbtn hbtn-red">♡ Guardar</button>
+                    <button class="hbtn hbtn-dark">☆ Lista de lectura</button>
+                    <button class="hbtn hbtn-dark">↗ Compartir</button>
+                </div>
+ 
+                <div class="hero-stats">
+                    <span class="hstat">
+                        <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                        1.2M vistas
+                    </span>
+                    <span class="hstat">
+                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        4.9 / 5.0
+                    </span>
+                    <span class="hstat">
+                        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                        38.4k reseñas
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-arrow">›</div>
+    </section>
+ 
+    <!-- ══ SINOPSIS ══ -->
+    <section class="sinopsis-section">
+        <div class="sinopsis-container">
+            <h2>Sinopsis</h2>
+            <p>En un mundo envuelto en niebla, engranajes y secretos prohibidos, Klein Moretti despierta en el cuerpo de un joven que ha muerto en circunstancias misteriosas. Sin comprender del todo su nueva realidad, pronto se ve arrastrado a un sistema de poder basado en poderes, rituales y entidades ocultas que acechan desde las sombras.</p>
+            <p>A medida que avanza por el peligroso camino de los "Beyonders", Klein debe equilibrar la humanidad con fuerzas que amenazan con consumir su cordura. Entre organizaciones clandestinas, dioses antiguos y conspiraciones que trascienden la lógica, cada decisión lo acerca más a la verdad… y al abismo.</p>
+            <p>En este mundo donde el conocimiento es poder, pero también locura, incluso el más mínimo error puede tener consecuencias irreversibles.</p>
+            <p><em>Porque algunas verdades no están destinadas a ser descubiertas.</em></p>
+        </div>
+    </section>
+ 
+    <!-- ══ INFORMACIÓN DE CONTACTO ══ -->
+    <section class="contacto-section">
+        <div class="contacto-container">
+            <h2>Información de Contacto</h2>
+            <div class="contacto-grid">
+ 
+                <div class="contacto-item">
+                    <div class="contacto-icon ci-blue">
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <h6>Ubicación</h6>
+                    <p>Av. Javier Prado<br>Este 4200, Lima</p>
+                </div>
+ 
+                <div class="contacto-item">
+                    <div class="contacto-icon ci-green">
+                        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.43a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .82h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006.99 6.99l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                    </div>
+                    <h6>Teléfono</h6>
+                    <p>+51 (01) 234-5678<br>Lun – Vie 9am–6pm</p>
+                </div>
+ 
+                <div class="contacto-item">
+                    <div class="contacto-icon ci-purple">
+                        <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </div>
+                    <h6>Email</h6>
+                    <p>contacto@aethon.com<br>soporte@aethon.com</p>
+                </div>
+ 
+                <div class="contacto-item">
+                    <div class="contacto-icon ci-orange">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <h6>Horario</h6>
+                    <p>Lun – Vie: 9am – 6pm<br>Sáb: 10am – 2pm</p>
+                </div>
+ 
+            </div>
+        </div>
+    </section>
+ 
+    <!-- ══ MAPA + SERVICIOS ══ -->
+    <section class="map-services-section">
+        <div class="map-services-container">
+            <div class="map-services-grid">
+ 
+                <div>
+                    <h3>Nuestra Ubicación</h3>
+                    <div class="fake-map">
+                        <div class="fake-map-grid"></div>
+                        <div class="fake-map-road-h" style="top:35%;"></div>
+                        <div class="fake-map-road-h" style="top:60%;"></div>
+                        <div class="fake-map-road-v" style="left:40%;"></div>
+                        <div class="fake-map-road-v" style="left:65%;"></div>
+                        <div class="map-pin" style="top:48%; left:52%;">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+                            </svg>
+                        </div>
+                        <span class="map-label">AETHON · Lima, Perú</span>
+                    </div>
+                    <a href="https://maps.google.com" target="_blank" class="btn-ver-mapa">Ver en Google Maps →</a>
+                </div>
+ 
+                <div>
+                    <h3>Nuestros Servicios</h3>
+ 
+                    <div class="service-item">
+                        <div class="service-icon si-green">
+                            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </div>
+                        <div class="service-text">
+                            <h6>Envío Gratis</h6>
+                            <p>En pedidos mayores a S/. 100 en Lima Metropolitana.</p>
+                        </div>
+                    </div>
+ 
+                    <div class="service-item">
+                        <div class="service-icon si-blue">
+                            <svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+                        </div>
+                        <div class="service-text">
+                            <h6>Pago Seguro</h6>
+                            <p>Aceptamos tarjetas, transferencias y pagos digitales.</p>
+                        </div>
+                    </div>
+ 
+                    <div class="service-item">
+                        <div class="service-icon si-red">
+                            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                        </div>
+                        <div class="service-text">
+                            <h6>Devoluciones</h6>
+                            <p>30 días para cambios o devoluciones sin preguntas.</p>
+                        </div>
+                    </div>
+                </div>
+ 
+            </div>
+        </div>
+    </section>
+ 
+    <!-- ══ YOU MAY ALSO LIKE ══ -->
+    <section class="also-like-section">
+        <div class="also-like-bar">
+            <h3>Recomendaciones para ti</h3>
+            <div class="also-nav">
+                <button id="alsoPrev">‹</button>
+                <button id="alsoNext">›</button>
+            </div>
+        </div>
+        <div class="also-like-track" id="alsoTrack">
+            <div class="also-book"><img src="img/libro1.jpg" alt="Libro 1"><span class="also-book-title">El Señor de los Anillos</span></div>
+            <div class="also-book"><img src="img/libro2.png" alt="Libro 2"><span class="also-book-title">Breve Historia del Tiempo</span></div>
+            <div class="also-book"><img src="img/libro1.jpg" alt="Libro 3"><span class="also-book-title">1984</span></div>
+            <div class="also-book"><img src="img/libro2.png" alt="Libro 4"><span class="also-book-title">Cien Años de Soledad</span></div>
+            <div class="also-book"><img src="img/libro1.jpg" alt="Libro 5"><span class="also-book-title">El Principito</span></div>
+            <div class="also-book"><img src="img/libro2.png" alt="Libro 6"><span class="also-book-title">Harry Potter</span></div>
+        </div>
+    </section>    
+        
+    <!-- ══ LIBROS PARECIDOS ══ -->
+    <section class="libros-parecidos-section">
+        <div class="lp-container">
+            <h2 class="lp-titulo">Libros parecidos</h2>
+            <div class="lp-grid" id="lpGrid">
+
+                <div class="lp-card">
+                    <div class="lp-cover-wrap">
+                        <img src="img/libro1.jpg" alt="Lord of the Mysteries">
+                    </div>
+                    <h5>Lord of the Mysteries</h5>
+                    <p class="lp-author">por Cuttlefish That Loves Diving</p>
+                    <p class="lp-meta">Publicación: 2 años</p>
+                </div>
+
+                <div class="lp-card">
+                    <div class="lp-cover-wrap">
+                        <img src="img/libro1.jpg" alt="Lord of the Mysteries">
+                    </div>
+                    <h5>Lord of the Mysteries</h5>
+                    <p class="lp-author">por Cuttlefish That Loves Diving</p>
+                    <p class="lp-meta">Publicación: 1 año</p>
+                </div>
+
+                <div class="lp-card">
+                    <div class="lp-cover-wrap">
+                        <img src="img/libro1.jpg" alt="Lord of the Mysteries">
+                    </div>
+                    <h5>Lord of the Mysteries</h5>
+                    <p class="lp-author">por Cuttlefish That Loves Diving</p>
+                    <p class="lp-meta">Publicación: 1 1/2 años</p>
+                </div>
+
+                <div class="lp-card">
+                    <div class="lp-cover-wrap">
+                        <img src="img/libro1.jpg" alt="Lord of the Mysteries">
+                    </div>
+                    <h5>Lord of the Mysteries</h5>
+                    <p class="lp-author">por Cuttlefish That Loves Diving</p>
+                    <p class="lp-meta">Publicación: 3 años,<br>remate al por mayor</p>
+                </div>
+
+                <div class="lp-card">
+                    <div class="lp-cover-wrap">
+                        <img src="img/libro1.jpg" alt="Lord of the Mysteries">
+                    </div>
+                    <h5>Lord of the Mysteries</h5>
+                    <p class="lp-author">por Cuttlefish That Loves Diving</p>
+                    <p class="lp-meta">Publicación: 4 años</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ WHAT DO YOU THINK? ══ -->
+    <section class="reactions-section">
+        <div class="reactions-container">
+            <h3 class="reactions-title">What do you think?</h3>
+            <p class="reactions-subtitle" id="reactionCount">2 reactions</p>
+
+            <div class="emojis-row">
+
+                <div class="emoji-item" data-key="upvote">
+                    <button class="emoji-btn" title="Upvote">👍</button>
+                    <span class="emoji-count" id="count-upvote">2</span>
+                    <span class="emoji-label">Upvote</span>
+                </div>
+
+                <div class="emoji-item" data-key="funny">
+                    <button class="emoji-btn" title="Funny">😂</button>
+                    <span class="emoji-count" id="count-funny">0</span>
+                    <span class="emoji-label">Funny</span>
+                </div>
+
+                <div class="emoji-item" data-key="love">
+                    <button class="emoji-btn" title="Love">❤️</button>
+                    <span class="emoji-count" id="count-love">0</span>
+                    <span class="emoji-label">Love</span>
+                </div>
+
+                <div class="emoji-item" data-key="surprised">
+                    <button class="emoji-btn" title="Surprised">😮</button>
+                    <span class="emoji-count" id="count-surprised">0</span>
+                    <span class="emoji-label">Surprised</span>
+                </div>
+
+                <div class="emoji-item" data-key="angry">
+                    <button class="emoji-btn" title="Angry">😠</button>
+                    <span class="emoji-count" id="count-angry">0</span>
+                    <span class="emoji-label">Angry</span>
+                </div>
+
+                <div class="emoji-item" data-key="sad">
+                    <button class="emoji-btn" title="Sad">😢</button>
+                    <span class="emoji-count" id="count-sad">0</span>
+                    <span class="emoji-label">Sad</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ COMMENTS ══ -->
+    <section class="comments-section">
+        <div class="comments-container">
+
+            <!-- Header -->
+            <div class="comments-header">
+                <div class="comments-title-wrap">
+                    <span class="comments-icon">▣</span>
+                    <h4>Comments</h4>
+                    <span class="comments-badge" id="commentBadge">1</span>
+                </div>
+                <button class="btn-guidelines">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    Comments Guidelines
+                </button>
+            </div>
+
+            <!-- Editor -->
+            <div class="editor-wrap">
+                <div
+                    class="comment-editor"
+                    id="commentEditor"
+                    contenteditable="true"
+                    data-placeholder="Write your comment here or @mention your friend to discuss..."
+                ></div>
+
+                <div class="editor-toolbar">
+                    <div class="toolbar-left">
+                        <button class="tb-btn" data-cmd="bold"         title="Bold"><b>B</b></button>
+                        <button class="tb-btn" data-cmd="italic"       title="Italic"><i>I</i></button>
+                        <button class="tb-btn" data-cmd="strikeThrough" title="Strike"><s>S</s></button>
+                        <div class="tb-sep"></div>
+                        <button class="tb-btn" data-cmd="insertCode"   title="Code">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        </button>
+                        <button class="tb-btn" data-cmd="removeFormat" title="Clear format">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                        </button>
+                        <div class="tb-sep"></div>
+                        <button class="tb-btn" data-cmd="undo" title="Undo">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 14 4 9 9 4"/><path d="M20 20v-7a4 4 0 00-4-4H4"/></svg>
+                        </button>
+                        <button class="tb-btn" data-cmd="insertOrderedList" title="Ordered list">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                        </button>
+                        <button class="tb-btn" data-cmd="insertUnorderedList" title="Bullet list">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><circle cx="3" cy="6" r="1" fill="currentColor"/><circle cx="3" cy="12" r="1" fill="currentColor"/><circle cx="3" cy="18" r="1" fill="currentColor"/></svg>
+                        </button>
+                        <button class="tb-btn" data-cmd="createLink" title="Link">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="toolbar-right">
+                        <span class="word-counter"><span id="wordCount">0</span> Words</span>
+                        <button class="btn-submit" id="submitComment">Submit</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="comments-tabs">
+                <button class="ctab active" data-tab="latest">Latest</button>
+                <button class="ctab"        data-tab="oldest">Oldest</button>
+                <button class="ctab"        data-tab="best">Best</button>
+            </div>
+
+            <!-- Comment list -->
+            <div class="comment-list" id="commentList">
+
+                <div class="comment-item">
+                    <div class="comment-avatar">U</div>
+                    <div class="comment-body">
+                        <div class="comment-meta">
+                            <span class="comment-user">Kevin Salazar</span>
+                            <span class="comment-time">hace 1 día</span>
+                        </div>
+                        <p class="comment-text">¡Excelente libro! La ambientación steampunk mezclada con magia victoriana es increíble.</p>
+                        <div class="comment-actions">
+                            <button class="ca-btn">👍 Like</button>
+                            <button class="ca-btn">↩ Reply</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>    
+    </main>
+
+    <!-- Footer incluido desde footer.html -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Script para incluir componentes HTML separados -->
+    <script>
+        // Función para cargar HTML parcial en un elemento
+        function loadComponent(url, elementId) {
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                })
+                .catch(error => console.error('Error cargando ' + url + ':', error));
+        }
+
+        // Cargar componentes al iniciar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            // se enlazan los HTML con sus contenedores
+            loadComponent('navbar.html', 'navbar-placeholder');
+            loadComponent('carousel.html', 'carousel-placeholder');
+            loadComponent('footer.html', 'footer-placeholder'); 
+        });
+    </script>
+    <script src="seccion-extra.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>
