@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking de Libros – AETHON</title>
+
+    <!-- Estilos principales -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- navbar reutilizable -->
+    <link href="css/navbar.css" rel="stylesheet">
+
+    <!-- estilos del footer -->
+    <link href="css/footer.css" rel="stylesheet">
+
+    <!-- estilos de ranking -->
+    <link href="css/ranking.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Contenido principal -->
+    <main>
+        <section class="ranking-section">
+            <div class="ranking-contenedor">
+
+                <h1 class="ranking-title">Ranking de Libros</h1>
+
+                <!-- Nav row: tabs + filtro temporal -->
+                <div class="ranking-nav-row">
+                    <div class="ranking-tabs" role="tablist">
+                        <button class="ranking-tab-btn active" data-tab="visitados" role="tab" aria-selected="true">Visitados</button>
+                        <button class="ranking-tab-btn" data-tab="vendidos" role="tab" aria-selected="false">Vendidos</button>
+                        <button class="ranking-tab-btn" data-tab="valorados" role="tab" aria-selected="false">Valorados</button>
+                    </div>
+
+                    <div class="ranking-filter-wrapper">
+                        <div class="dropdown">
+                            <button class="ranking-filter-btn dropdown-toggle" type="button" id="rankingFilterBtn" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span id="filter-label">Diario</span>
+                            </button>
+                            <ul class="dropdown-menu ranking-dropdown-menu" aria-labelledby="rankingFilterBtn">
+                                <li><a class="dropdown-item ranking-filter-item active-filter" href="#" data-value="Diario">Diario <span class="filter-check">✓</span></a></li>
+                                <li><a class="dropdown-item ranking-filter-item" href="#" data-value="Semanal">Semanal <span class="filter-check">✓</span></a></li>
+                                <li><a class="dropdown-item ranking-filter-item" href="#" data-value="Mensual">Mensual <span class="filter-check">✓</span></a></li>
+                                <li><a class="dropdown-item ranking-filter-item" href="#" data-value="Anual">Anual <span class="filter-check">✓</span></a></li>
+                                <li><a class="dropdown-item ranking-filter-item" href="#" data-value="Todo el tiempo">Todo el tiempo <span class="filter-check">✓</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel: Visitados -->
+                <div id="panel-visitados" class="ranking-panel active">
+                    <div class="ranking-grid" id="grid-visitados"></div>
+                </div>
+
+                <!-- Panel: Vendidos -->
+                <div id="panel-vendidos" class="ranking-panel">
+                    <div class="ranking-grid" id="grid-vendidos"></div>
+                </div>
+
+                <!-- Panel: Valorados -->
+                <div id="panel-valorados" class="ranking-panel">
+                    <div class="ranking-grid" id="grid-valorados"></div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts Bootstrap -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        /* ── Carga de componentes ── */
+        function loadComponent(url, elementId, callback) {
+            fetch(url)
+                .then(r => r.text())
+                .then(html => {
+                    document.getElementById(elementId).innerHTML = html;
+                    if (callback) callback();
+                })
+                .catch(err => console.error('Error cargando ' + url + ':', err));
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            loadComponent('navbar.html', 'navbar-placeholder', function () {
+                document.querySelectorAll('#navbar-placeholder .nav-link').forEach(function (link) {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === 'ranking.html') {
+                        link.classList.add('active');
+                    }
+                });
+            });
+            loadComponent('footer.html', 'footer-placeholder');
+
+            renderAllGrids();
+            initTabs();
+            initFilter();
+        });
+
+        /* ── Datos de libros ── */
+        const booksData = {
+            visitados: [
+                { title: "Cthulhu Mythos",          author: "H.P. Lovecraft",              img: "img/libro1.jpg" },
+                { title: "Deep Sea Amber",           author: "Yuan Tang",                   img: "img/libro2.png" },
+                { title: "Lord of Mysteries",        author: "CuttleFish Loves Diving",     img: "img/libro1.jpg" },
+                { title: "1888",                     author: "Silver",                      img: "img/libro2.png" },
+                { title: "Release the Witch",        author: "Er Mu",                       img: "img/libro1.jpg" },
+                { title: "Attempt",                  author: "Bi Mar",                      img: "img/libro2.png" },
+                { title: "El Nombre del Viento",     author: "Patrick Rothfuss",            img: "img/libro1.jpg" },
+                { title: "Dune",                     author: "Frank Herbert",               img: "img/libro2.png" },
+                { title: "Fundación",                author: "Isaac Asimov",                img: "img/libro1.jpg" },
+                { title: "Neuromancer",              author: "William Gibson",              img: "img/libro2.png" },
+                { title: "The Way of Kings",         author: "Brandon Sanderson",           img: "img/libro1.jpg" },
+                { title: "Mistborn",                 author: "Brandon Sanderson",           img: "img/libro2.png" },
+                { title: "Juego de Tronos",          author: "George R.R. Martin",          img: "img/libro1.jpg" },
+                { title: "El Imperio Final",         author: "Brandon Sanderson",           img: "img/libro2.png" },
+                { title: "Words of Radiance",        author: "Brandon Sanderson",           img: "img/libro1.jpg" },
+                { title: "Oathbringer",              author: "Brandon Sanderson",           img: "img/libro2.png" },
+                { title: "Rhythm of War",            author: "Brandon Sanderson",           img: "img/libro1.jpg" },
+                { title: "Elantris",                 author: "Brandon Sanderson",           img: "img/libro2.png" },
+                { title: "Warbreaker",               author: "Brandon Sanderson",           img: "img/libro1.jpg" },
+                { title: "Arcanum Unbounded",        author: "Brandon Sanderson",           img: "img/libro2.png" }
+            ],
+            vendidos: [
+                { title: "Dune",                     author: "Frank Herbert",               img: "img/libro1.jpg" },
+                { title: "El Señor de los Anillos",  author: "J.R.R. Tolkien",              img: "img/libro2.png" },
+                { title: "1984",                     author: "George Orwell",               img: "img/libro1.jpg" },
+                { title: "Cien Años de Soledad",     author: "G. García Márquez",           img: "img/libro2.png" },
+                { title: "Harry Potter I",           author: "J.K. Rowling",                img: "img/libro1.jpg" },
+                { title: "El Hobbit",                author: "J.R.R. Tolkien",              img: "img/libro2.png" },
+                { title: "Don Quijote",              author: "M. de Cervantes",             img: "img/libro1.jpg" },
+                { title: "La Odisea",                author: "Homero",                      img: "img/libro2.png" },
+                { title: "El Alquimista",            author: "Paulo Coelho",                img: "img/libro1.jpg" },
+                { title: "El Principito",            author: "A. de Saint-Exupéry",         img: "img/libro2.png" },
+                { title: "Fahrenheit 451",           author: "Ray Bradbury",                img: "img/libro1.jpg" },
+                { title: "Un Mundo Feliz",           author: "Aldous Huxley",               img: "img/libro2.png" },
+                { title: "Matar a un Ruiseñor",      author: "Harper Lee",                  img: "img/libro1.jpg" },
+                { title: "El Gran Gatsby",           author: "F. Scott Fitzgerald",         img: "img/libro2.png" },
+                { title: "De Ratones y Hombres",     author: "John Steinbeck",              img: "img/libro1.jpg" },
+                { title: "El Guardián del Centeno",  author: "J.D. Salinger",               img: "img/libro2.png" },
+                { title: "Crimen y Castigo",         author: "F. Dostoyevski",              img: "img/libro1.jpg" },
+                { title: "Guerra y Paz",             author: "León Tolstói",                img: "img/libro2.png" },
+                { title: "Ana Karénina",             author: "León Tolstói",                img: "img/libro1.jpg" },
+                { title: "Los Miserables",           author: "Victor Hugo",                 img: "img/libro2.png" }
+            ],
+            valorados: [
+                { title: "Juego de Tronos",          author: "George R.R. Martin",          img: "img/libro1.jpg" },
+                { title: "El Nombre del Viento",     author: "Patrick Rothfuss",            img: "img/libro2.png" },
+                { title: "La Vía del Rey",           author: "Brandon Sanderson",           img: "img/libro1.jpg" },
+                { title: "El Problema de los 3 Cuerpos", author: "Liu Cixin",              img: "img/libro2.png" },
+                { title: "Hyperion",                 author: "Dan Simmons",                 img: "img/libro1.jpg" },
+                { title: "El Juego de Ender",        author: "Orson Scott Card",            img: "img/libro2.png" },
+                { title: "Guía del Autoestopista",   author: "Douglas Adams",               img: "img/libro1.jpg" },
+                { title: "Snow Crash",               author: "Neal Stephenson",             img: "img/libro2.png" },
+                { title: "La Mano Izquierda",        author: "Ursula K. Le Guin",           img: "img/libro1.jpg" },
+                { title: "Solaris",                  author: "Stanislaw Lem",               img: "img/libro2.png" },
+                { title: "Fundación",                author: "Isaac Asimov",                img: "img/libro1.jpg" },
+                { title: "Yo, Robot",                author: "Isaac Asimov",                img: "img/libro2.png" },
+                { title: "El Fin de la Infancia",    author: "Arthur C. Clarke",            img: "img/libro1.jpg" },
+                { title: "2001: Odisea del Espacio", author: "Arthur C. Clarke",            img: "img/libro2.png" },
+                { title: "The Martian",              author: "Andy Weir",                   img: "img/libro1.jpg" },
+                { title: "Project Hail Mary",        author: "Andy Weir",                   img: "img/libro2.png" },
+                { title: "Red Rising",               author: "Pierce Brown",                img: "img/libro1.jpg" },
+                { title: "Sabias Palabras del Temor", author: "Patrick Rothfuss",           img: "img/libro2.png" },
+                { title: "Los Dones de Alvin",       author: "Orson Scott Card",            img: "img/libro1.jpg" },
+                { title: "Puertas de Piedra",        author: "Patrick Rothfuss",            img: "img/libro2.png" }
+            ]
+        };
+
+        /* ── Badge CSS class ── */
+        function badgeClass(rank) {
+            if (rank === 1) return 'rank-1';
+            if (rank === 2) return 'rank-2';
+            if (rank === 3) return 'rank-3';
+            return 'rank-other';
+        }
+
+        /* ── Render a single book card ── */
+        function bookCard(book, rank) {
+            return `
+                <div class="ranking-card">
+                    <div class="ranking-card-img-wrap">
+                        <img src="${book.img}" alt="${book.title}" loading="lazy" onerror="this.style.display='none'">
+                        <div class="ranking-badge ${badgeClass(rank)}">${rank}</div>
+                    </div>
+                    <div class="ranking-card-body">
+                        <div class="ranking-card-title">${book.title}</div>
+                        <div class="ranking-card-author">por ${book.author}</div>
+                    </div>
+                </div>`;
+        }
+
+        /* ── Render all grids ── */
+        function renderAllGrids() {
+            ['visitados', 'vendidos', 'valorados'].forEach(function (tab) {
+                var grid = document.getElementById('grid-' + tab);
+                if (!grid) return;
+                grid.innerHTML = booksData[tab].map(function (book, i) {
+                    return bookCard(book, i + 1);
+                }).join('');
+            });
+        }
+
+        /* ── Tab switching ── */
+        var activeTab = 'visitados';
+        var tabFilters = { visitados: 'Diario', vendidos: 'Diario', valorados: 'Diario' };
+
+        function initTabs() {
+            var tabs = document.querySelectorAll('.ranking-tab-btn');
+            tabs.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    tabs.forEach(function (t) {
+                        t.classList.remove('active');
+                        t.setAttribute('aria-selected', 'false');
+                    });
+                    this.classList.add('active');
+                    this.setAttribute('aria-selected', 'true');
+
+                    document.querySelectorAll('.ranking-panel').forEach(function (p) {
+                        p.classList.remove('active');
+                    });
+                    activeTab = this.dataset.tab;
+                    document.getElementById('panel-' + activeTab).classList.add('active');
+
+                    document.getElementById('filter-label').textContent = tabFilters[activeTab];
+                    updateFilterHighlight();
+                });
+            });
+        }
+
+        /* ── Time filter ── */
+        function initFilter() {
+            var items = document.querySelectorAll('.ranking-filter-item');
+            items.forEach(function (item) {
+                item.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var value = this.dataset.value;
+                    tabFilters[activeTab] = value;
+                    document.getElementById('filter-label').textContent = value;
+                    updateFilterHighlight();
+                    var dropdownEl = document.getElementById('rankingFilterBtn');
+                    var dropdown = bootstrap.Dropdown.getInstance(dropdownEl);
+                    if (dropdown) dropdown.hide();
+                });
+            });
+        }
+
+        function updateFilterHighlight() {
+            var items = document.querySelectorAll('.ranking-filter-item');
+            items.forEach(function (item) {
+                item.classList.remove('active-filter');
+                if (item.dataset.value === tabFilters[activeTab]) {
+                    item.classList.add('active-filter');
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
