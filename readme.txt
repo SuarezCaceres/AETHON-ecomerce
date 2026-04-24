@@ -6,3 +6,4 @@ U23233499@utp.edu.pe camila
 U23234041@utp.edu.pe gabriela
 U23271062@utp.edu.pe dayron
 
+camila y gabriela haran catalogo
