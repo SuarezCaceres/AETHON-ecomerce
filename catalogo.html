@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo</title>
+    <link rel="stylesheet" href="css/catalogo.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="banner">
+        <h1>Catálogo de Productos</h1>
+        <p>Encuentra los mejores libros para lo que necesites!</p>
+    </div>
+
+    <div class="layout">
+
+       
+        <div class="filters">
+            <h3>Filtros</h3>
+
+            <label>Género</label>
+            <select id="genero">
+                <option>Seleccione género</option>
+                <option>Universitarios</option>
+                <option>Escolares</option>
+                <option>Arquitectura y Diseño</option>
+                <option>Literatura</option>
+                <option>Infantil</option>
+                <option>Idiomas</option>
+                <option>Tecnología</option>
+                <option>Ciencias</option>
+                <option>Arte</option>
+                <option>Material educativo</option>
+            </select>
+
+            <label>Etiqueta</label>
+            <select id="etiqueta">
+                <option>Seleccione etiqueta</option>
+                <option>cálculo</option>
+                <option>maquetas</option>
+                <option>rápido</option>
+                <option>económico</option>
+                <option>plan lector</option>
+                <option>universitario</option>
+                <option>ingeniería</option>
+            </select>
+
+            <label>Precio</label>
+            <select id="precio">
+                <option>Seleccione</option>
+                <option>0 - 50</option>
+                <option>50 - 100</option>
+                <option>100 - 200</option>
+                <option>200+</option>
+            </select>
+
+            <label>Autor</label>
+            <select id="autor">
+                <option>Seleccione autor</option>
+                <option>Lovecraft</option>
+                <option>Cuttlefish</option>
+                <option>Autor 1</option>
+                <option>Autor 2</option>
+            </select>
+
+            <button onclick="limpiarFiltros()">Limpiar filtros</button>
+        </div>
+
+       
+        <div class="catalog">
+
+            <div class="top-bar">
+                <input type="text" id="search" placeholder="Search...">
+                <select id="orden">
+                    <option>Ordenar por</option>
+                </select>
+            </div>
+
+            <p id="contador"></p>
+
+            <div class="grid" id="grid"></div>
+
+        </div>
+
+    </div>
+</div>
+
+<script src="js/catalogo.js"></script>
+</body>
+</html>
+
