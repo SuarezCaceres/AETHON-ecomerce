@@ -1,84 +1,33 @@
 <header class="custom-header">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
-            <div class="container">
+            <div class="container-fluid">
                 <a href="index.html">
                     <img src="img/image.png" alt="ATHERION" class="logo me-2">
                 </a>
-            </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="ranking.html">Ranking</a></li>
-                    <li class="nav-item"><a class="nav-link" href="catalogo.html">Catalogo</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
-                </ul>
-                <div class="d-flex align-items-center gap-2">
-                    <div class="input-group search-group d-none d-lg-flex">
-                        <input type="text" class="form-control search-input" placeholder="Buscar" aria-label="Buscar">
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="ranking.html">Ranking</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Biblioteca</a></li>
+                    </ul>
+
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="search-group d-none d-lg-flex">
+                            <i class="bi bi-search ms-3 text-muted"></i>
+                            <input type="text" class="form-control search-input" placeholder="Buscar..." aria-label="Buscar">
+                            <button class="btn-filtro-interno" type="button" onclick="window.location.href='filtro.html'">
+                             <i class="bi bi-funnel"></i> Filtrar
+</button>
+                        </div>
+
+                        <button class="btn btn-login rounded-pill px-4" onclick="window.location.href='login.html'">Login</button>
                     </div>
-                    <!-- Filtros Dropdown mas el checkout de bootstrap -->
-                    <div class="dropdown d-none d-lg-flex">
-                        <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                            Filtros
-                        </button>
-                        <ul class="dropdown-menu p-3" style="min-width: 250px;">
-                            <li>
-                                <h6 class="dropdown-header">Categorías</h6>
-                            </li>
-                            <li>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="novela" id="filtro1">
-                                    <label class="form-check-label" for="filtro1">Universitarios</label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="ciencia" id="filtro2">
-                                    <label class="form-check-label" for="filtro2">Escolares</label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="historia" id="filtro3">
-                                    <label class="form-check-label" for="filtro3">Arquitectura</label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="fantasia" id="filtro4">
-                                    <label class="form-check-label" for="filtro4">Literatura</label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="biografia" id="filtro5">
-                                    <label class="form-check-label" for="filtro5">Infantil</label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="biografia" id="filtro5">
-                                    <label class="form-check-label" for="filtro5">Idiomas</label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="biografia" id="filtro5">
-                                    <label class="form-check-label" for="filtro5">Tecnologia</label>
-                                </div>
-                            </li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><button class="btn btn-primary btn-sm w-100" type="button">Aplicar Filtros</button></li>
-                        </ul>
-                    </div>
-                    <button class="btn btn-login rounded-pill px-4" onclick="window.location.href='login.html'">Login</button>
                 </div>
             </div>
         </nav>
