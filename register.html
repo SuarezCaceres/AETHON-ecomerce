@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro - AETHON</title>
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link href="css/navbar.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/register.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+<div id="navbar-placeholder"></div>
+
+<section class="vh-100 d-flex align-items-center" style="padding-top: 80px; padding-bottom: 80px;">
+  <div class="container">
+    <div class="row justify-content-center">
+      
+      <div class="col-11 col-sm-9 col-md-6 col-lg-4">
+        <div class="card card-login-custom shadow">
+          
+          <form>
+            <h1 class="fw-bold mb-2">Registrarse</h1>
+            <p class="mb-4" style="color: #aaa; font-size: 0.9rem;">
+              Ingresa tus datos a continuación para crear tu cuenta.
+            </p>
+
+            <div class="mb-3">
+              <label class="label-custom">Correo electrónico</label>
+              <input type="email" class="form-control form-control-lg login-input" placeholder="correo@ejemplo.com">
+            </div>
+
+            <div class="mb-3">
+              <label class="label-custom">Nombre de usuario</label>
+              <input type="text" class="form-control form-control-lg login-input" placeholder="Tu usuario">
+            </div>
+
+            <div class="mb-3">
+              <label class="label-custom">Contraseña</label>
+              <input type="password" class="form-control form-control-lg login-input" placeholder="Crea una contraseña">
+            </div>
+
+            <div class="mb-4">
+              <label class="label-custom">Confirmar contraseña</label>
+              <input type="password" class="form-control form-control-lg login-input" placeholder="Repite tu contraseña">
+            </div>
+
+            <div class="mb-4">
+              <button class="btn btn-login-main btn-lg w-100">Registrarse</button>
+            </div>
+
+            <p class="mt-4 text-center" style="color: #aaa; font-size: 0.9rem;">
+              ¿Ya tienes una cuenta?
+              <a href="login.html" class="link-red ms-1">Inicia sesión</a>
+            </p>
+
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+
+<script>
+    function loadComponent(url, elementId) {
+        fetch(url)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById(elementId).innerHTML = data;
+            })
+            .catch(error => console.error('Error cargando ' + url + ':', error));
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        loadComponent('navbar.html', 'navbar-placeholder');
+    });
+</script>
+
+</body>
+</html>
