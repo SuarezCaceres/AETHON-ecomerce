@@ -35,7 +35,7 @@ U23271062@utp.edu.pe dayron
 
 ## 📸 Evidencias
 
-
+Ver carpeta /docs/evidencias
 
 ##  Funcionalidades actuales
 
